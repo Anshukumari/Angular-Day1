@@ -1,0 +1,49 @@
+<p>mycomp works!</p>
+<app-header></app-header>
+
+<!--defaulting the value of child variable with parent value -->
+<app-like [totalLikes]='defaulttotalLikes'></app-like>
+
+<p>user data works!</p>
+<div *ngIf='userdata.length>0;then show else noshow'></div>
+
+<ng-template #show>
+<ul>
+    <li *ngFor='let ud of userdata'>
+        {{ud}}
+    </li>
+</ul>
+</ng-template>
+<ng-template #noshow>No item found</ng-template>
+
+<p>department data works!</p>
+<div *ngIf='departmentdata.length>0;then showDep else noshow'></div>
+
+
+<ng-template #showDep>
+<ul>
+        <li *ngFor='let dd of departmentdata'>
+            {{dd}}
+        </li>
+    </ul>
+</ng-template>
+
+<div>
+<input class="form-control" type="text" [value]="mycity"/>
+
+<p> Change the below text and see the impact on above input text as added ngModel 
+<input class="form-control" type="text" [(ngModel)]="mycity"/>
+<button class="btn btn-primary" (click)="clickMe()">Click me to change the city</button>
+<button class="btn btn-primary" [class.active]="isActive" (click)="clickMe()">Click me to change the city</button>
+<button class="btn btn-primary" [style.background]="colorValue">Change color</button>
+<p [ngStyle]="myStyles">
+        Text is to apply multiple styles using NgStyles
+</p>
+</div>
+<div>
+<img [src]="myimage"/>
+</div>
+
+
+
+<app-footer></app-footer>

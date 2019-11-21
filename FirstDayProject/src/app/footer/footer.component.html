@@ -1,0 +1,9 @@
+<p>footer works!</p>
+
+<ul>
+    <li>{{userdata.uname | uppercase}}</li>
+    <li>{{userdata.income | currency : 'INR' : false}}</li>
+    <li>{{userdata.rating | number :'2.2-2'}}</li>
+    <li>{{userdata.joinDate | date : 'MM/yy'}}</li>
+</ul>
+{{userdata | json}}
